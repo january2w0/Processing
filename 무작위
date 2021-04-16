@@ -1,0 +1,50 @@
+float m = 0;
+float n = 0;
+float xSpeed = 0;
+float ySpeed = 0;
+float t = 0;
+float t2 = 0.05;
+
+void setup() {
+  size(800,480);
+  background(0);
+}
+
+void draw() {
+  background(0);
+  float xSpeed1 = 0.0001*random(1, 2);
+  float ySpeed1 = 0.0002*random(1, 2);
+  xSpeed += xSpeed1;
+  ySpeed += ySpeed1;
+  if (xSpeed < 0 || xSpeed > 0.01) {
+    xSpeed1 = xSpeed1 * -1;
+  }
+  if (ySpeed < 0 || ySpeed > 0.005) {
+    ySpeed1 = ySpeed1 * -1;
+  }
+  m += xSpeed;
+  n += ySpeed;
+  if (m < 0 || m > 2*PI) {
+    xSpeed = xSpeed * -1;
+    t = 2;      
+  }
+  if (n < 0 || n > 2*PI) {
+    ySpeed = ySpeed * -1;
+    t = 2;
+  }
+  t -= t2;
+  if (t < 0) {
+    t = 0;
+    fill(255);
+  } else {
+    background(150*(t/2), 0, 0);
+    fill(255-150*(t/2));
+  }
+  ellipse(width/2 - (width-50)/2*cos(m), 
+  height/2 - (height-50)/2*cos(n), 50, 50);
+  print(t);
+  print(' ');
+  print(xSpeed1);
+  print(' ');
+  println(ySpeed1);
+}
