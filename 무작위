@@ -1,7 +1,6 @@
-float m = 0;
-float n = 0;
-float xSpeed = 0;
-float ySpeed = 0;
+float x, y = 0;
+float m, n = 0;
+float xSpeed, ySpeed = 0;
 float t = 0;
 float t2 = 0.05;
 
@@ -43,8 +42,9 @@ void draw() {
     background(100*(t/2), 0, 0);
     fill(255-150*(t/2));
   }
-  ellipse(width/2 - (width-50)/2*cos(m), 
-  height/2 - (height-50)/2*cos(n), 50, 50);
+  x = width/2 - (width-50)/2*cos(m);
+  y = height/2 - (height-50)/2*cos(n);
+  ellipse(x, y, 50, 50);
   print(t);
   print(' ');
   print(xSpeed1);
