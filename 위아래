@@ -1,0 +1,18 @@
+float n = 0;
+float ySpeed = 0.07;
+
+void setup() {
+  size(480,800);
+  background(0);
+}
+
+void draw() {
+  background(0);
+  n += ySpeed;
+  if (n < 0 || n > 2*PI) {
+    ySpeed = ySpeed * -1;
+  }
+  ellipse(width/2, height/2 - (height-abs(25*cos(n)))/2*cos(n),
+  abs(25*cos(n))+25, abs(25*sin(n))+25);
+  println(ySpeed);
+}
