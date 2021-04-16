@@ -32,12 +32,15 @@ void draw() {
     ySpeed = ySpeed * -1;
     t = 2;
   }
+  if (PI-0.01 < m && PI+0.01 > m || PI-0.05 < n && PI+0.05 > n) {
+    t = 2;
+  }
   t -= t2;
   if (t < 0) {
     t = 0;
     fill(255);
   } else {
-    background(150*(t/2), 0, 0);
+    background(100*(t/2), 0, 0);
     fill(255-150*(t/2));
   }
   ellipse(width/2 - (width-50)/2*cos(m), 
