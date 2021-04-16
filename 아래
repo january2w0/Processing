@@ -12,7 +12,7 @@ void draw() {
   if (n < 0 || n > 2*PI) {
     ySpeed = ySpeed * -1;
   }
-  ellipse(width/2, (height-25) - abs((height-abs(50*cos(n)))*cos(n)),
+  ellipse(width/2, (height-20) - abs((height-50)*cos(n)),
   abs(10*sin(n))+40, abs(10*cos(n))+40);
   println(ySpeed);
 }
