@@ -39,7 +39,7 @@ void draw() {
     t = 0;
     fill(255);
   } else {
-    background(100*(t/2), 0, 0);
+    background(80*(t/2), 0, 0);
     fill(255-150*(t/2));
   }
   x = width/2 - (width-50)/2*cos(m);
