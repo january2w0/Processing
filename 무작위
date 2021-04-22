@@ -11,8 +11,8 @@ void setup() {
 
 void draw() {
   background(0);
-  float xSpeed1 = 0.0001*random(1, 2);
-  float ySpeed1 = 0.0002*random(1, 2);
+  float xSpeed1 = 0.00005*random(1, 2);
+  float ySpeed1 = 0.0001*random(1, 2);
   xSpeed += xSpeed1;
   ySpeed += ySpeed1;
   if (xSpeed < 0 || xSpeed > 0.01) {
