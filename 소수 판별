@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-int n = 12397;  // 판별할 수 
+int n = 12397;  // 판별할 수 입력
 int i = 0;
 int x = 0;
 ArrayList prime = new ArrayList();
