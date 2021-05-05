@@ -1,18 +1,18 @@
-int n = 1;  // Number
+int N = 1;  // Number
 int Nf = 0;  // Number of factors
 float Np = 0;  // Number of primes
-float p = 0;  // percentage
+float P = 0;  // percentage
 
 void setup() {
   size(1500,500);
 }
 
 void draw() {
-  if (n <= 1500) {  // n의 범위를 정함으로서 n까지의 소수의 개수를 구할 수 있음.
-    n++;
+  if (N <= 1500) {  // n의 범위를 정함으로서 n까지의 소수의 개수를 구할 수 있음.
+    N++;
   }
   Np = 0;
-  for (int k=2; k<=n; k++) {
+  for (int k=2; k<=N; k++) {
     Nf = 0;
     for (int i=1; i<k; i++) {
       if (k%i == 0) {
@@ -23,9 +23,9 @@ void draw() {
       Np++;
     }
   }
-  p = (Np/n) * 100;  // n까지의 소수가 있을 확률을 백분율로 나타냄.
-  print(n, " ");
+  P = (Np/N) * 100;  // n까지의 소수가 있을 확률을 백분율로 나타냄.
+  print(N, " ");
   print(Np, " ");
-  println(p, "%", " ");
-  point(n,500-p*5);  // x축 n, y축 확률 그래프 그리기
+  println(P, "%", " ");
+  point(N,500-P*5);  // x축 n, y축 확률 그래프 그리기
 }
