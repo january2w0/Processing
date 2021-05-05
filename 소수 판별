@@ -1,0 +1,22 @@
+int n = 5;
+int i = 0;
+int x = 0;
+
+void setup() {
+  for (i=1; i<n; i++) {
+    if (n%i == 0) {
+      x++;
+    }
+  }
+  println("Number:",n);
+  println("Number of factors:",x);
+  if (x == 1) {
+    print("This is prime number!");
+  } else {
+    print("This is composition number!");
+  }
+}
+
+void draw() {
+
+}
