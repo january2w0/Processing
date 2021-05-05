@@ -7,7 +7,7 @@ ArrayList prime = new ArrayList();
 
 void setup() {
   println("Number:",n);
-  for (i=1; i<n; i++) {
+  for (i=1; i<=n; i++) {
     if (n%i == 0) {
       x++;
       prime.add(x-1, i);
@@ -15,7 +15,7 @@ void setup() {
   }
   print("Number of factors:", x, " ");
   System.out.println(prime.toString());
-  if (x == 1) {
+  if (x == 2) {
     print("This is prime number!");
   } else {
     print("This is composition number!");
