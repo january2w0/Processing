@@ -1,0 +1,34 @@
+int n = 1;
+int i = 0;
+int k = 0;
+int x = 0;
+float s = 0;
+float p = 0;
+
+void setup() {
+  size(1500,500);
+}
+
+void draw() {
+  if (n <= 15000) { // n의 범위를 정함으로서 n까지의 소수의 개수를 구할 수 있음.
+    n += 1;
+  }
+  s = 0;
+  for (k=2; k<=n; k++) {
+    x = 0;
+    for (i=1; i<k; i++) {
+      if (k%i == 0) {
+        x++;
+      }
+    }
+    if (x == 1) {
+      s++;
+    }
+  }
+  p = (s/n) * 100;
+  print(n,' ');
+  print(s,' ');
+  print(p,' ');
+  println(p/PI);
+  point(n/10,500-p*5); // x축 n, y축 확률 그래프 그리기
+}
