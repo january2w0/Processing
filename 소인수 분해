@@ -1,0 +1,13 @@
+int N = 14; // 소인수 분해하고 싶은 수 입력
+ 
+void setup() {
+  for (int i = 2; i*i <= N; i++) { 
+    if (N%i == 0) {
+      print(i, " ");
+      N /= i;
+    }
+  }
+  if (N != 1) {
+    System.out.print(N);
+  }
+}
