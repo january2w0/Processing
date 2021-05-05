@@ -1,21 +1,21 @@
 import java.util.Arrays;
 
-int n = 12397;  // 판별할 수 입력
+int n = 123787;  // Number
 int i = 0;
-int x = 0;
+int Nf = 0;  // Number of factors
 ArrayList prime = new ArrayList();
 
 void setup() {
   println("Number:",n);
   for (i=1; i<=n; i++) {
     if (n%i == 0) {
-      x++;
-      prime.add(x-1, i);
+      Nf++;
+      prime.add(Nf-1, i);
     }
   }
-  print("Number of factors:", x, " ");
+  print("Number of factors:", Nf, " ");
   System.out.println(prime.toString());
-  if (x == 2) {
+  if (Nf == 2) {
     print("This is prime number!");
   } else {
     print("This is composition number!");
