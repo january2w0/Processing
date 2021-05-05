@@ -8,6 +8,6 @@ void setup() {
     }
   }
   if (N != 1) {
-    System.out.print(N);
+    print(N);
   }
 }
