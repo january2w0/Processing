@@ -1,15 +1,20 @@
-int n = 5;
+import java.util.Arrays;
+
+int n = 12397;
 int i = 0;
 int x = 0;
+ArrayList prime = new ArrayList();
 
 void setup() {
+  println("Number:",n);
   for (i=1; i<n; i++) {
     if (n%i == 0) {
       x++;
+      prime.add(x-1, i);
     }
   }
-  println("Number:",n);
-  println("Number of factors:",x);
+  print("Number of factors:", x, " ");
+  System.out.println(prime.toString());
   if (x == 1) {
     print("This is prime number!");
   } else {
