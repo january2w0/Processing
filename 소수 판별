@@ -1,18 +1,17 @@
 import java.util.Arrays;
 
-int n = 123787;  // Number
-int i = 0;
+int N = 123787;  // Number
 int Nf = 0;  // Number of factors
 ArrayList prime = new ArrayList();
 
 void setup() {
-  println("Number:",n);
-  for (i=1; i<=n; i++) {
-    if (n%i == 0) {
+  for (int i=1; i<=n; i++) {
+    if (N%i == 0) {
       Nf++;
       prime.add(Nf-1, i);
     }
   }
+  println("Number:",N);
   print("Number of factors:", Nf, " ");
   System.out.println(prime.toString());
   if (Nf == 2) {
