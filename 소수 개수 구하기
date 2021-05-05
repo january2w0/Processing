@@ -1,6 +1,6 @@
 int n = 1;  // Number
-int Nf = 0;  // Number of factor
-float Np = 0;  // Number of prime
+int Nf = 0;  // Number of factors
+float Np = 0;  // Number of primes
 float p = 0;  // percentage
 
 void setup() {
