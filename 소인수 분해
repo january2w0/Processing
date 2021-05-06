@@ -1,13 +1,13 @@
-int N = 14; // 소인수 분해하고 싶은 수 입력
+int N = 2749578;
+int i = 2;
  
 void setup() {
-  for (int i = 2; i*i <= N; i++) { 
+  while (N != 1) {
     if (N%i == 0) {
-      print(i, " ");
       N /= i;
+      print(i," ");
+    } else {
+      i++;
     }
-  }
-  if (N != 1) {
-    print(N);
   }
 }
