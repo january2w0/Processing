@@ -1,4 +1,4 @@
-int N = 11;  // Number
+int N = 0;  // Number
 int Nf = 0;  // Number of factors
 int Npf = 0;  // Number of prime factors
 int k = 2;
@@ -14,7 +14,7 @@ void setup() {
   }
   println("Number:",N);
   println("Number of factors:", Nf, " ", Factors);
-  while (N != 1) {
+  while (N != 1 && N != 0) {
     if (N%k == 0) {
       N /= k;
       Npf++;
