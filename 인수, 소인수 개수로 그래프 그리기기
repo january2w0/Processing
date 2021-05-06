@@ -1,0 +1,35 @@
+int N = 0;  // Number
+int Anf = 0; // All number of factors
+
+void setup() {
+  size(800, 600);
+}
+
+void draw() {
+  int k = 2;
+  int Nf = 0;  // Number of factors
+  int Npf = 0;  // Number of prime factors
+  for (int i=1; i<=N; i++) {
+    if (N%i == 0) {
+      Nf++;
+    }
+  }
+  int N2 = N;
+  while (N2 != 1 && N2 != 0) {
+    if (N2%k == 0) {
+      N2 /= k;
+      Npf++;
+    } else {
+      k++;
+    }
+  }
+  print(N, " ");
+  print(Nf, " ");
+  print(Npf, " ");
+  println(Anf);
+  point(N, 600-Anf/5);
+  if (N < 800) { // N이하 만큼의 인수와 소수 개수 구하기
+    N++;
+    Anf += Npf;
+  }
+}
