@@ -1,0 +1,32 @@
+int N = 11;  // Number
+int Nf = 0;  // Number of factors
+int Npf = 0;  // Number of prime factors
+int k = 2;
+ArrayList Factors = new ArrayList();
+ArrayList Prime_factors = new ArrayList();
+
+void setup() {
+  for (int i=1; i<=N; i++) {
+    if (N%i == 0) {
+      Nf++;
+      Factors.add(Nf-1, i);
+    }
+  }
+  println("Number:",N);
+  println("Number of factors:", Nf, " ", Factors);
+  while (N != 1) {
+    if (N%k == 0) {
+      N /= k;
+      Npf++;
+      Prime_factors.add(Npf-1, k);
+    } else {
+      k++;
+    }
+  }
+  println("Number of prime factors:", Npf, " ", Prime_factors);
+  if (Nf == 2) {
+    print("This is prime number!");
+  } else {
+    print("This is composition number!");
+  }
+}
