@@ -35,10 +35,11 @@ void setup() {
     if (Previous - Np != 0) {
       y *= (Math.pow((int)Prime.get(Np-1),s)/(Math.pow((int)Prime.get(Np-1),s) - 1));
     }
-    println("ζ(s):", y, "=", "π^("+s+")"+"/"+1/(y/pi)); 
+    println("ζ(s):", y, "=", "π^("+s+")"+"/"+1/(y/pi));  // 리만 제타 함수의 값 출력하기
     
-    println(Prime);
-    point(n/5*2,500-P*5);  // x축 n, y축 밀도 그래프 그리기
+    println(Prime); // N까지의 모든 소수 출력하기
     println(" ");
+    
+    point(n/5*2,500-P*5);  // x축 n, y축 밀도 그래프 그리기
   }
 }
