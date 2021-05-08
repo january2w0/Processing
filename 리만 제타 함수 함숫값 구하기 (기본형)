@@ -1,6 +1,6 @@
 int N = 50000;
 int n = 1;
-int s = 10;
+int s = 2; 
 double y = 0;
 double pi = Math.pow(PI,s);
 
@@ -11,5 +11,5 @@ void setup() {
     println(n);
   }
   println(" ");
-  println("ζ(s): "+y, "=", "π^("+s+")"+"/"+1/(y/pi));  // 리만 제타 함수의 함숫값 출력하기
+  println("ζ("+s+"): "+y, "=", "π^("+s+")"+"/"+1/(y/pi));  // 리만 제타 함수의 함숫값 출력하기
 }
