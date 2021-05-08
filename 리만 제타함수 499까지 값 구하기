@@ -65,7 +65,39 @@ void setup() {
   (Math.pow(281,x)/(Math.pow(281,x) - 1))*
   (Math.pow(283,x)/(Math.pow(283,x) - 1))*
   (Math.pow(293,x)/(Math.pow(293,x) - 1))*
-  (Math.pow(307,x)/(Math.pow(307,x) - 1));
+  (Math.pow(307,x)/(Math.pow(307,x) - 1))*
+  (Math.pow(311,x)/(Math.pow(311,x) - 1))*
+  (Math.pow(313,x)/(Math.pow(313,x) - 1))*
+  (Math.pow(317,x)/(Math.pow(317,x) - 1))*
+  (Math.pow(331,x)/(Math.pow(331,x) - 1))*
+  (Math.pow(337,x)/(Math.pow(337,x) - 1))*
+  (Math.pow(347,x)/(Math.pow(347,x) - 1))*
+  (Math.pow(349,x)/(Math.pow(349,x) - 1))*
+  (Math.pow(353,x)/(Math.pow(353,x) - 1))*
+  (Math.pow(359,x)/(Math.pow(359,x) - 1))*
+  (Math.pow(367,x)/(Math.pow(367,x) - 1))*
+  (Math.pow(373,x)/(Math.pow(373,x) - 1))*
+  (Math.pow(379,x)/(Math.pow(379,x) - 1))*
+  (Math.pow(383,x)/(Math.pow(383,x) - 1))*
+  (Math.pow(389,x)/(Math.pow(389,x) - 1))*
+  (Math.pow(397,x)/(Math.pow(397,x) - 1))*
+  (Math.pow(401,x)/(Math.pow(401,x) - 1))*
+  (Math.pow(409,x)/(Math.pow(409,x) - 1))*
+  (Math.pow(419,x)/(Math.pow(419,x) - 1))*
+  (Math.pow(421,x)/(Math.pow(421,x) - 1))*
+  (Math.pow(431,x)/(Math.pow(431,x) - 1))*
+  (Math.pow(433,x)/(Math.pow(433,x) - 1))*
+  (Math.pow(439,x)/(Math.pow(439,x) - 1))*
+  (Math.pow(443,x)/(Math.pow(443,x) - 1))*
+  (Math.pow(449,x)/(Math.pow(449,x) - 1))*
+  (Math.pow(457,x)/(Math.pow(457,x) - 1))*
+  (Math.pow(461,x)/(Math.pow(461,x) - 1))*
+  (Math.pow(463,x)/(Math.pow(463,x) - 1))*
+  (Math.pow(467,x)/(Math.pow(467,x) - 1))*
+  (Math.pow(479,x)/(Math.pow(479,x) - 1))*
+  (Math.pow(487,x)/(Math.pow(487,x) - 1))*
+  (Math.pow(491,x)/(Math.pow(491,x) - 1))*
+  (Math.pow(499,x)/(Math.pow(499,x) - 1));
   for (int i=1; i<=x; i++) {
     pi *= PI;
   }
