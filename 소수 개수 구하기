@@ -14,7 +14,7 @@ void draw() {
   Np = 0;
   for (int k=2; k<=N; k++) {
     Nf = 0;
-    for (int i=1; i<k; i++) {
+    for (int i=1; i*i<=k; i++) {
       if (k%i == 0) {
         Nf++;
       }
@@ -29,3 +29,4 @@ void draw() {
   println(P, "%", " ");
   point(N,500-P*5);  // x축 n, y축 밀도 그래프 그리기
 }
+
