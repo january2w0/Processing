@@ -28,7 +28,7 @@ void draw() {
   print(Npf, " ");
   println(Anf);
   point(N, 600-Anf/5);
-  if (N < 800) { // N이하 만큼의 인수와 소수 개수 구하기
+  if (N < 800) { // N이하 수의 모든 인수와 소수 개수 구하기
     N++;
     Anf += Npf;
   }
