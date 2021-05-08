@@ -1,4 +1,4 @@
-int N = 5000;
+int N = 50000;
 int n = 1;
 int s = 10;
 double y = 0;
@@ -8,6 +8,8 @@ void setup() {
   while (n < N) {
     y += 1/(Math.pow(n,s));
     n++;
+    println(n);
   }
+  println(" ");
   println("ζ(s): "+y, "=", "π^("+s+")"+"/"+1/(y/pi));  // 리만 제타 함수의 함숫값 출력하기
 }
