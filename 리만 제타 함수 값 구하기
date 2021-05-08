@@ -1,9 +1,9 @@
-int N = 50;  // N의 범위 정하기
+int N = 5000;  // N의 범위 정하기
 int n = 1; 
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
 ArrayList Prime = new ArrayList();
-int s = 10;  // 제곱할 값
+int s = 2;  // 제곱할 값
 double y = 1;
 double pi = Math.pow(PI,s);
 
