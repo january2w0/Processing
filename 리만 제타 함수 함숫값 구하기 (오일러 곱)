@@ -1,5 +1,5 @@
-int N = 10000;  // N의 범위 정하기
-int n = 1; 
+int N = 100;  // N의 범위 정하기
+int n = 1;  // n이 0이면 소수의 개수를 1부터 셈
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
 int Difference = 0;
@@ -15,23 +15,20 @@ void setup() {
   while (n < N) {  
     n++;
     int Previous = Np;
-    Np = 0;
-    for (int k=2; k<=n; k++) {
-      Nf = 0;
-      for (int i=1; i*i<=k; i++) {
-        if (k%i == 0) {
+    Nf = 0;
+    for (int k=1; k*k<=n; k++) {
+      if (n%k == 0) {
           Nf++;
-        }
       }
-      if (Nf == 1) {
-        Np++;
-        if (Np > Previous) {
-          Prime.add(Previous, k);
-          if (Np > 1) {
-            Difference = (int)Prime.get(Previous) - (int)Prime.get(Previous-1);
-            Total += Difference;
-            A = Total/Previous;
-          }
+    }
+    if (Nf == 1) {
+      Np++;
+      if (Np > Previous) {
+        Prime.add(Previous, n);
+        if (Np > 1) {
+          Difference = (int)Prime.get(Previous) - (int)Prime.get(Previous-1);
+          Total += Difference;
+          A = Total/Previous;
         }
       }
     }
@@ -41,12 +38,13 @@ void setup() {
     float P = (Np1/n) * 100;  // n까지의 소수 밀도를 백분율로 나타냄.
     print("P: "+P+"%", " ");
     
-    if (Previous - Np != 0) {
+    if (Previous - Np < 0) {
       y *= (Math.pow((int)Prime.get(Np-1),s)/(Math.pow((int)Prime.get(Np-1),s) - 1));
     }
     print("ζ("+s+"): "+y, "=", "π^("+s+")"+"/"+1/(y/pi), " ");  // 리만 제타 함수의 함숫값 출력하기
     
-    println("Average: "+A); // 소수들의 평균차잇값 출력하기
+    println("Average: "+A); // 소수들의 평균차잇값값 출력하기
+
     
     println(Prime); // N까지의 모든 소수 출력하기
     println(" ");
