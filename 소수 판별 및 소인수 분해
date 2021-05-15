@@ -14,7 +14,7 @@ void setup() {
   }
   println("Number:",N);
   println("Number of factors:", Nf, " ", Factors);
-  while (N != 1 && N != 0) {
+  while (N > 1) {
     if (N%k == 0) {
       N /= k;
       Npf++;
