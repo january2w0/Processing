@@ -55,9 +55,9 @@ void setup() {
       py = 500 - Np*(sx/N);
     }
     //point(px, py);  // x축 n, y축 소수 개수 그래프 그리기   
-    //point(px, 500-P*3);  // x축 n, y축 밀도 그래프 그리기  
+    point(px, 500-P*6);  // x축 n, y축 밀도 그래프 그리기  
     float A1 = (float)A;
-    point(px, 500-A1*15);  // x축 n, y축 평균차잇값 그래프 그리기
+    point(px, 500-A1*30);  // x축 n, y축 평균차잇값 그래프 그리기
   }
   //println(Prime); // N까지의 모든 소수 출력하기
 }
