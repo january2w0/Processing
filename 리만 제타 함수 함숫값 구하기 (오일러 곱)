@@ -1,20 +1,19 @@
-int N = 100;  // N의 범위 정하기
-int n = 1;  // n이 0이면 소수의 개수를 1부터 셈
+int N = 10000;  // N의 범위 정하기
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
-int Difference = 0;
 ArrayList Prime = new ArrayList();
 int s = 2;  // 제곱할 값
 double y = 1;
 double pi = Math.pow(PI,s);
 double Total = 0; 
 double A = 0; // 소수들의 평균차잇값
+int sx = 1500, sy = 500;
+float px = 0, py = 0;;
 
 void setup() {
-  size(1500,500);
-  while (n < N) { 
+  size(1500, 500);
+  for (int n=2; n<=N; n++) { 
     println(" ");
-    n++;
     int Previous = Np;
     Nf = 0;
     for (int k=1; k*k<=n; k++) {
@@ -27,7 +26,7 @@ void setup() {
       if (Np > Previous) {
         Prime.add(Previous, n);
         if (Np > 1) {
-          Difference = (int)Prime.get(Previous) - (int)Prime.get(Previous-1);
+          int Difference = (int)Prime.get(Previous) - (int)Prime.get(Previous-1);
           Total += Difference;
           A = Total/Previous;
         }
@@ -48,12 +47,17 @@ void setup() {
     
     //println(Prime); // N까지의 모든 소수 출력하기
     
-    //point(n, 500-Np);  // x축 n, y축 소수 개수 그래프 그리기
-    
-    //point(n/5*2, 500-P*5);  // x축 n, y축 밀도 그래프 그리기
-    
+    if (N/sx > 0) {
+      px = n/(N/sx);
+      py = 500 - 2*Np/(N/sx);
+    } else {
+      px = n*(sx/N);
+      py = 500 - Np*(sx/N);
+    }
+    //point(px, py);  // x축 n, y축 소수 개수 그래프 그리기   
+    //point(px, 500-P*3);  // x축 n, y축 밀도 그래프 그리기  
     float A1 = (float)A;
-    point(n/66, 500-A1*15);  // x축 n, y축 평균차잇값 그래프 그리기
+    point(px, 500-A1*15);  // x축 n, y축 평균차잇값 그래프 그리기
   }
-  println(Prime); // N까지의 모든 소수 출력하기
+  //println(Prime); // N까지의 모든 소수 출력하기
 }
