@@ -1,4 +1,4 @@
-int N = 100000;  // N의 범위 정하기
+int N = 50000;  // N의 범위 정하기
 int n = 1;  // n이 0이면 소수의 개수를 1부터 셈
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
@@ -55,4 +55,5 @@ void setup() {
     float A1 = (float)A;
     point(n/66, 500-A1*15);  // x축 n, y축 평균차잇값 그래프 그리기
   }
+  println(Prime); // N까지의 모든 소수 출력하기
 }
