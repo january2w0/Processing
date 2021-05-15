@@ -1,5 +1,5 @@
-int N = 1000000;  // N의 범위 정하기
-int n = 0;  // n이 0이면 소수의 개수를 1부터 셈
+int N = 100000;  // N의 범위 정하기
+int n = 1;  // n이 0이면 소수의 개수를 1부터 셈
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
 int Difference = 0;
@@ -53,6 +53,6 @@ void setup() {
     //point(n/5*2, 500-P*5);  // x축 n, y축 밀도 그래프 그리기
     
     float A1 = (float)A;
-    point(n/6666, 500-A1*15);  // x축 n, y축 소수들의 차이값 평균 그래프 그리기
+    point(n/66, 500-A1*15);  // x축 n, y축 평균차잇값 그래프 그리기
   }
 }
