@@ -1,4 +1,4 @@
-int N = 50000;  // N의 범위 정하기
+int N = 100;  // N의 범위 정하기
 int n = 1;  // n이 0이면 소수의 개수를 1부터 셈
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
@@ -12,7 +12,8 @@ double A = 0; // 소수들의 평균차잇값
 
 void setup() {
   size(1500,500);
-  while (n < N) {  
+  while (n < N) { 
+    println(" ");
     n++;
     int Previous = Np;
     Nf = 0;
@@ -46,7 +47,6 @@ void setup() {
     println("Average: "+A); // 소수들의 평균차잇값값 출력하기
     
     //println(Prime); // N까지의 모든 소수 출력하기
-    println(" ");
     
     //point(n, 500-Np);  // x축 n, y축 소수 개수 그래프 그리기
     
