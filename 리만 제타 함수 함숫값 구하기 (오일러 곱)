@@ -1,4 +1,4 @@
-int N = 1000;  // N의 범위 정하기
+int N = 100000;  // N의 범위 정하기
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
 ArrayList Prime = new ArrayList();
