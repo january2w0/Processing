@@ -1,4 +1,4 @@
-int N = 100000;  // N의 범위 정하기
+int N = 100;  // N의 범위 정하기
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
 ArrayList Prime = new ArrayList();
@@ -62,27 +62,27 @@ void setup() {
       py2 = sy - 10*(n/A1)*(sy/N);
     }  
     //point(px, py);  // x축 n, y축 소수 개수 그래프 그리기 
-    line(previous_px, previous_py1, px, py);
+    //line(previous_px, previous_py1, px, py);
     //point(px, 500-P*6);  // x축 n, y축 밀도 그래프 그리기
     //line(previous_px, previous_py2, px, 500-P*6);
     //point(px, 500-A1*30);  // x축 n, y축 평균차잇값 그래프 그리기
     //line(previous_px, previous_py3, px, 500-A1*30);
     //point(px, 500-300*(log(n)-100*pow(P,-1)));  // 소수개수의 근사치를 구하는 함수의 보정값 그래프 그리기
-    //line(previous_px, previous_py4, px, 500-300*(log(n)-100*pow(P,-1)));
+    line(previous_px, previous_py4, px, 400-300*(log(n)-100*pow(P,-1)));
     //point(previous_px, prevoius_py5, px, 500-10*n/(A1));  // 평균차잇값을 이용한 소수개수 그래프 그리기
     //line(previous_px, previous_py5, px, py2);
     previous_px = px;
-    previous_py1 = py;
+    //previous_py1 = py;
     //previous_py2 = 500-P*6;
     //previous_py3 = 500-A1*30;
-    //previous_py4 = 500-300*(log(n)-100*pow(P,-1));
-    previous_py5 = py2;
+    previous_py4 = 400-300*(log(n)-100*pow(P,-1));
+    //previous_py5 = py2;
   }
   //println(Prime); // N까지의 모든 소수 출력하기
-  float std = 9592; // 기준선 그리기
-  if (N/sx > 1) {
-    line(0, sy - 10*std/(N/sy), 1500, sy - 10*std/(N/sy));
-  } else {
-    line(0, sy - 10*std*(sy/N), 1500, sy - 10*std*(sy/N));
-  } 
+  //float std = 9592; // 기준선 그리기
+  //if (N/sx > 1) {
+  //  line(0, sy - 10*std/(N/sy), 1500, sy - 10*std/(N/sy));
+  //} else {
+  //  line(0, sy - 10*std*(sy/N), 1500, sy - 10*std*(sy/N));
+  //} 
 }
