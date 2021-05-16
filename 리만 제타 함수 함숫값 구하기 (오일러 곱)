@@ -9,7 +9,7 @@ double Total = 0;
 double A = 0; // 소수들의 평균차잇값
 float sx = 1500, sy = 500;
 float px = 0, py = 0, previous_px = 0;
-float previous_py1 = 500, previous_py2 = 500, previous_py3 = 500;
+float previous_py1 = 500, previous_py2 = 500, previous_py3 = 500, previous_py4 = 500;;
 
 void setup() {
   size(1500, 500);
@@ -38,6 +38,8 @@ void setup() {
     print("Np: "+Np, " ");
     float P = (Np1/n) * 100;  // n까지의 소수 밀도를 백분율로 나타냄.
     print("P: "+P+"%", " ");
+    //double eNp = n/(log(n)-(log(n)-100*pow(P,-1)));
+    //print("eNp: "+eNp, " "); // 예상 소수개수 출력하기
     
     if (Previous - Np < 0) {
       y *= (Math.pow((int)Prime.get(Np-1),s)/(Math.pow((int)Prime.get(Np-1),s) - 1));
@@ -61,11 +63,14 @@ void setup() {
     //line(previous_px, previous_py2, px, 500-P*6);
     float A1 = (float)A;
     //point(px, 500-A1*30);  // x축 n, y축 평균차잇값 그래프 그리기
-    line(previous_px, previous_py3, px, 500-A1*30);
-    previous_px = px;
-    previous_py1 = py;
-    previous_py2 = 500-P*6;
-    previous_py3 = 500-A1*30;
+    //line(previous_px, previous_py3, px, 500-A1*30);
+    //point(px, 500-300*(log(n)-100*pow(P,-1)));  // 소수개수의 근사치를 구하는 함수의 보정값 그래프 그리기
+    //line(previous_px, previous_py4, px, 500-300*(log(n)-100*pow(P,-1)));
+    //previous_px = px;
+    //previous_py1 = py;
+    //previous_py2 = 500-P*6;
+    //previous_py3 = 500-A1*30;
+    //previous_py4 = 500-300*(log(n)-100*pow(P,-1));
   }
-  //println(Prime); // N까지의 모든 소수 출력하기
+  println(Prime); // N까지의 모든 소수 출력하기
 }
