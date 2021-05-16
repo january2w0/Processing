@@ -12,6 +12,7 @@ float px = 0, py = 0, py2 = 0, py3 = 0, previous_px = 0;
 float previous_py1, previous_py2, previous_py3,
 previous_py4, previous_py5, previous_py6 = sy;
 int m, n = 5;
+  PImage img; 
 
 void setup() {
   size(1500, 500);
@@ -86,6 +87,7 @@ void setup() {
     //previous_py5 = 400-300*(log(n)-100*pow(P,-1));
     previous_py6 = py3; 
   }
+  saveFrame("images/result-###.png");
   //println(Prime); // N까지의 모든 소수 출력하기
   /*float stdX = 10, stdY = 5; // 점 표시하기
   if (N/sx > 1) {
@@ -99,10 +101,11 @@ void setup() {
   }*/
 }
 
-/*void draw() {
+void draw() {
   m = 5;
-  n = 5;
-  background(200);
+  n = 5; 
+  img = loadImage("images/result-000.png");
+  image(img, 0 , 0, sx, sy);
   stroke(255, 50, 50);
   line(mouseX, 0, mouseX, sy);
   line(0, mouseY, sx, mouseY);
@@ -123,5 +126,4 @@ void setup() {
     text("("+stdX+", "+stdY+")", mouseX+m, mouseY-n);
     //text("("+stdX+", "+stdY+")", 5, 17);
   }
-}*/
-
+}
