@@ -8,8 +8,9 @@ double pi = Math.pow(PI,s);
 double Total = 0; 
 double A = 0; // 소수들의 평균차잇값
 float sx = 1500, sy = 500;
-float px = 0, py = 0, previous_px = 0;
-float previous_py1 = 500, previous_py2 = 500, previous_py3 = 500, previous_py4 = 500;;
+float px = 0, py = 0, py2 = 0, previous_px = 0;
+float previous_py1 = 500, previous_py2 = 500, 
+previous_py3 = 500, previous_py4 = 500, previous_py5 = 500;
 
 void setup() {
   size(1500, 500);
@@ -33,6 +34,7 @@ void setup() {
         }
       }
     }
+    float A1 = (float)A;
     float Np1 = Np;
     print("N: "+n, " ");
     print("Np: "+Np, " ");
@@ -50,27 +52,37 @@ void setup() {
     
     //println(Prime); // N까지의 모든 소수 출력하기
     
-    if (N/sx > 0) {
+    if (N/sx > 1) {
       px = n/(N/sx);
-      py = 500 - 2*Np/(N/sx);
+      py = sy - 10*Np/(N/sy);
+      py2 = sy - 10*(n/A1)/(N/sy);
     } else {
       px = n*(sx/N);
-      py = 500 - Np*(sx/N);
+      py = sy - 10*Np*(sy/N);
+      py2 = sy - 10*(n/A1)*(sy/N);
     }  
     //point(px, py);  // x축 n, y축 소수 개수 그래프 그리기 
-    //line(previous_px, previous_py1, px, py);
+    line(previous_px, previous_py1, px, py);
     //point(px, 500-P*6);  // x축 n, y축 밀도 그래프 그리기
     //line(previous_px, previous_py2, px, 500-P*6);
-    float A1 = (float)A;
     //point(px, 500-A1*30);  // x축 n, y축 평균차잇값 그래프 그리기
     //line(previous_px, previous_py3, px, 500-A1*30);
     //point(px, 500-300*(log(n)-100*pow(P,-1)));  // 소수개수의 근사치를 구하는 함수의 보정값 그래프 그리기
     //line(previous_px, previous_py4, px, 500-300*(log(n)-100*pow(P,-1)));
-    //previous_px = px;
-    //previous_py1 = py;
+    //point(previous_px, prevoius_py5, px, 500-10*n/(A1));  // 평균차잇값을 이용한 소수개수 그래프 그리기
+    //line(previous_px, previous_py5, px, py2);
+    previous_px = px;
+    previous_py1 = py;
     //previous_py2 = 500-P*6;
     //previous_py3 = 500-A1*30;
     //previous_py4 = 500-300*(log(n)-100*pow(P,-1));
+    previous_py5 = py2;
   }
-  println(Prime); // N까지의 모든 소수 출력하기
+  //println(Prime); // N까지의 모든 소수 출력하기
+  float std = 9592; // 기준선 그리기
+  if (N/sx > 1) {
+    line(0, sy - 10*std/(N/sy), 1500, sy - 10*std/(N/sy));
+  } else {
+    line(0, sy - 10*std*(sy/N), 1500, sy - 10*std*(sy/N));
+  } 
 }
