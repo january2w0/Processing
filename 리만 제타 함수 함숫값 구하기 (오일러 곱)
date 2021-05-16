@@ -12,7 +12,7 @@ float px = 0, py = 0, py2 = 0, py3 = 0, previous_px = 0;
 float previous_py1, previous_py2, previous_py3,
 previous_py4, previous_py5, previous_py6 = sy;
 int m, n = 5;
-  PImage img; 
+PImage img; 
 
 void setup() {
   size(1500, 500);
