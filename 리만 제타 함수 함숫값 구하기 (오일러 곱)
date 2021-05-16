@@ -1,4 +1,4 @@
-int N = 10000;  // N의 범위 정하기
+int N = 2000;  // N의 범위 정하기
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
 ArrayList Prime = new ArrayList();
@@ -16,7 +16,7 @@ PImage img;
 
 void setup() {
   size(1500, 500);
-  background(200);
+  background(240);
   textSize(12);
   for (int n=2; n<=N; n++) {  // n이 1부터 시작하면 소수의 개수를 1부터 셈
     println(" ");
@@ -118,12 +118,12 @@ void draw() {
   if (N/sx > 1) {
     float stdX = mouseX*(N/sx), stdY = ((sy-mouseY)/10)*(N/sy);
     fill(255, 50, 50);
-    text("("+stdX+", "+stdY+")", mouseX+m, mouseY-n);  // 좌표표시 같이 움직이기
-    //text("("+stdX+", "+stdY+")", 5, 17); // 좌표표시 고정하기
+    //text("("+stdX+", "+stdY+")", mouseX+m, mouseY-n);  // 좌표표시 같이 움직이기
+    text("("+stdX+", "+stdY+")", 5, 17); // 좌표표시 고정하기
   } else {
     float stdX = mouseX*(N/sx), stdY = ((sy-mouseY)/10)/(sy/N);
     fill(255, 50, 50);
-    text("("+stdX+", "+stdY+")", mouseX+m, mouseY-n);
-    //text("("+stdX+", "+stdY+")", 5, 17);
+    //text("("+stdX+", "+stdY+")", mouseX+m, mouseY-n);
+    text("("+stdX+", "+stdY+")", 5, 17);
   }
 }
