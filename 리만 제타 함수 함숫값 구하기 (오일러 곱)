@@ -1,23 +1,27 @@
-int N = 2000;  // N의 범위 정하기
+int N = 100000; // N의 범위 정하기
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
 ArrayList Prime = new ArrayList();
+ArrayList stdX = new ArrayList();
+ArrayList stdY = new ArrayList();
 int s = 2;  // 제곱할 값
-double y = 1;
+double fs = 1;
 double pi = Math.pow(PI,s);
 double Total = 0; 
 double A = 0; // 소수들의 평균차잇값
 float sx = 1500, sy = 500;
-float px = 0, py = 0, py2 = 0, py3 = 0, previous_px = 0;
-float previous_py1, previous_py2, previous_py3,
-previous_py4, previous_py5, previous_py6 = sy;
+float x_1, x_2, px_1, px_2, y_1, y_2, y_3, y_4; 
+float py_1 = sy, py_2 = sy, py_3 = sy, py_4 = sy, py_5 = sy, py_6 = sy, py_7 = sy;
 int m, n = 5;
+float zoom = sx/N;
 PImage img; 
 
-void setup() {
+void setup() 
+{
   size(1500, 500);
   background(240);
   textSize(12);
+  
   for (int n=2; n<=N; n++) {  // n이 1부터 시작하면 소수의 개수를 1부터 셈
     println(" ");
     int Previous = Np;
@@ -38,7 +42,8 @@ void setup() {
         }
       }
     }
-    float A1 = (float)A;
+    
+    float Af = (float)A;
     float Np1 = Np;
     print("N: "+n, " ");
     print("Np: "+Np, " ");
@@ -48,46 +53,65 @@ void setup() {
     print("eNp: "+eNp, " "); // 예상 소수개수 출력하기*/
     
     if (Previous - Np < 0) {
-      y *= (pow((int)Prime.get(Np-1),s)/(pow((int)Prime.get(Np-1),s) - 1));
+      fs *= (pow((int)Prime.get(Np-1),s)/(pow((int)Prime.get(Np-1),s) - 1));
     }
-    print("ζ("+s+"): "+y, "=", "π^("+s+")"+"/"+1/(y/pi), " ");  // 리만 제타 함수의 함숫값 출력하기
+    print("ζ("+s+"): "+fs, "=", "π^("+s+")"+"/"+1/(fs/pi), " ");  // 리만 제타 함수의 함숫값 출력하기
     
     println("Average: "+A); // 소수들의 평균차잇값 출력하기
     
     //println(Prime); // N까지의 모든 소수 출력하기
     
     if (N/sx > 1) {
-      px = n/(N/sx);
-      py = sy - 10*Np/(N/sy);
-      py2 = sy - 10*(n/A1)/(N/sy);
-      py3 = sy - 10*(n/(100*pow(P,-1)))/(N/sy);
-    } else {
-      px = n*(sx/N);
-      py = sy - 10*Np*(sy/N);
-      py2 = sy - 10*(n/A1)*(sy/N);
-      py3 = sy - 10*(n/(100*pow(P,-1)))*(sy/N);
+      x_1 = n/(N/sx);
+      y_1 = sy - 10*Np/(N/sy);
+      y_2 = sy - 10*(n/Af)/(N/sy);
+      y_3 = sy - 10*(n/(100*pow(P,-1)))/(N/sy);
+    } 
+    else {
+      x_1 = n*(sx/N);
+      y_1 = sy - 10*Np*(sy/N);
+      y_2 = sy - 10*(n/Af)*(sy/N);
+      y_3 = sy - 10*(n/(100*pow(P,-1)))*(sy/N);
     }  
-    //point(px, py);  // x축 n, y축 소수 개수 그래프 그리기 
-    //line(previous_px, previous_py1, px, py);
-    //point(px, 500-P*6);  // x축 n, y축 밀도 그래프 그리기
-    //line(previous_px, previous_py2, px, 500-P*6);
-    //point(px, 500-A1*30);  // x축 n, y축 평균차잇값 그래프 그리기
-    //line(previous_px, previous_py3, px, 500-A1*30);
-    //point(px, py2);  // 평균차잇값을 이용한 소수개수 그래프 그리기
-    //line(previous_px, previous_py4, px, py2);
-    //point(px, 500-300*(log(n)-100*pow(P,-1)));  // 소수개수의 근사치를 구하는 함수의 보정값 그래프 그리기
-    //line(previous_px, previous_py5, px, 400-300*(log(n)-100*pow(P,-1)));
-    //point(px, py3);  // 소수개수의 근사치를 구하는 함수의 보정된 그래프 그리기
-    line(previous_px, previous_py6, px, py3);
-    previous_px = px;
-    //previous_py1 = py;
-    //previous_py2 = 500-P*6;
-    //previous_py3 = 500-A1*30;
-    //previous_py4 = py2;
-    //previous_py5 = 400-300*(log(n)-100*pow(P,-1));
-    previous_py6 = py3; 
+    
+    //point(x_1, y_1);  // x축 n, y축 소수 개수 그래프 그리기 
+    //line(px_1, py_1, x_1, y_1);
+    //py_1 = y_1;
+    
+    //point(x_1, 500-P*6);  // x축 n, y축 밀도 그래프 그리기
+    //line(px_1, py_2, x_1, 500-P*6);
+    //py_2 = 500-P*6;
+    
+    //point(x_1, 500-Af*30);  // x축 n, y축 평균차잇값 그래프 그리기
+    //line(px_1, py_3, x_1, 500-Af*30);
+    //py_3 = 500-Af*30;
+    
+    //point(x_1, y_2);  // 평균차잇값을 이용한 소수개수 그래프 그리기
+    //line(px_1, py_4, x_1, y_2);
+    //py_4 = y_2;
+    
+    //point(x_1, 500-300*(log(n)-100*pow(P,-1)));  // 소수개수의 근사치를 구하는 함수의 보정값 그래프 그리기
+    //line(px_1, py_5, x_1, 400-300*(log(n)-100*pow(P,-1)));
+    //py_5 = 400-300*(log(n)-100*pow(P,-1));
+    
+    //point(x_1, y_3);  // 소수개수의 근사치를 구하는 함수의 보정된 그래프 그리기
+    line(px_1, py_6, x_1, y_3);
+    py_6 = y_3;
+    
+    px_1 = x_1;
   }
+  
+  /*while (x_2 < N) 
+  {
+    x_2 += 0.01;
+    y_4 = 1 - pow(sin(PI*x_2)/(PI*x_2),2);
+    line(zoom*px_2, 500-zoom*py_7, zoom*x_2, 500-zoom*y_4); 
+    px_2 = x_2;
+    py_7 = y_4;
+  }*/
+  
   saveFrame("images/result-###.png");
+  
   //println(Prime); // N까지의 모든 소수 출력하기
   /*float stdX = 10, stdY = 5; // 점 표시하기
   if (N/sx > 1) {
@@ -101,29 +125,59 @@ void setup() {
   }*/
 }
 
-void draw() {
+void draw()
+{
   m = 5;
-  n = 5; 
+  n = 58; 
+  ArrayList stdX = new ArrayList();
+  ArrayList stdY = new ArrayList();
+  ArrayList stdN = new ArrayList();
+  stdY.add((sy-mouseY)/6);
+  stdY.add((sy-mouseY)/30);
+  stdY.add((sy-mouseY)/zoom);
+  stdN.add("P");
+  stdN.add("A");
+  stdN.add("S");
+  stdN.add("Np");
+  
   img = loadImage("images/result-000.png");
   image(img, 0 , 0, sx, sy);
+  
   stroke(255, 50, 50);
   line(mouseX, 0, mouseX, sy);
   line(0, mouseY, sx, mouseY);
+  
   if (mouseX > 1380) {
-    m = -110;
+    m = -130;
   } 
-  if (mouseY < 20) {
-    n = -20;
+  if (mouseY < 80) {
+    n = -17;
+  }
+  
+  if (N/sx > 1) { 
+    for (int k=0; k<3; k++) {
+      stdX.add(mouseX*(N/sx));
+    }
+    stdX.add(mouseX/zoom);
+    stdY.add(((sy-mouseY)/10)*(N/sy));
+    fill(255, 50, 50);
+    
+    for (int i=0; i<4; i++) {
+      //text("("+stdX.get(i)+", "+stdY.get(i)+")", mouseX+m, mouseY+17*i-n);  // 좌표표시 같이 움직이기
+      text("("+stdX.get(i)+", "+stdY.get(i)+") "+stdN.get(i), 5, 17*(i+1)); // 좌표표시 고정하기
+    }
   } 
-  if (N/sx > 1) {
-    float stdX = mouseX*(N/sx), stdY = ((sy-mouseY)/10)*(N/sy);
+  else {
+    for (int k=0; k<3; k++) {
+      stdX.add(mouseX*(N/sx));
+    }
+    stdX.add(mouseX/zoom);
+    stdY.add(((sy-mouseY)/10)/(sy/N));
     fill(255, 50, 50);
-    //text("("+stdX+", "+stdY+")", mouseX+m, mouseY-n);  // 좌표표시 같이 움직이기
-    text("("+stdX+", "+stdY+")", 5, 17); // 좌표표시 고정하기
-  } else {
-    float stdX = mouseX*(N/sx), stdY = ((sy-mouseY)/10)/(sy/N);
-    fill(255, 50, 50);
-    //text("("+stdX+", "+stdY+")", mouseX+m, mouseY-n);
-    text("("+stdX+", "+stdY+")", 5, 17);
+    
+    for (int i=0; i<4; i++) {
+      //text("("+stdX.get(i)+", "+stdY.get(i)+")", mouseX+m, mouseY+17*i-n);  // 좌표표시 같이 움직이기
+      text("("+stdX.get(i)+", "+stdY.get(i)+") "+stdN.get(i), 5, 17*(i+1)); // 좌표표시 고정하기
+    }
   }
 }
