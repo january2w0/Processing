@@ -1,4 +1,4 @@
-int N = 100000; // N의 범위 정하기
+int N = 5; // N의 범위 정하기
 int Nf = 0;  // Number of factors
 int Np = 0;  // Number of primes
 ArrayList Prime = new ArrayList();
@@ -95,20 +95,20 @@ void setup()
     //py_5 = 400-300*(log(n)-100*pow(P,-1));
     
     //point(x_1, y_3);  // 소수개수의 근사치를 구하는 함수의 보정된 그래프 그리기
-    line(px_1, py_6, x_1, y_3);
-    py_6 = y_3;
+    //line(px_1, py_6, x_1, y_3);
+    //py_6 = y_3;
     
     px_1 = x_1;
   }
   
-  /*while (x_2 < N) 
+  while (x_2 < N) 
   {
     x_2 += 0.01;
     y_4 = 1 - pow(sin(PI*x_2)/(PI*x_2),2);
-    line(zoom*px_2, 500-zoom*py_7, zoom*x_2, 500-zoom*y_4); 
+    line(zoom*px_2, py_7, zoom*x_2, 500-zoom*y_4); 
     px_2 = x_2;
-    py_7 = y_4;
-  }*/
+    py_7 = 500 - zoom*y_4;
+  }
   
   saveFrame("images/result-###.png");
   
@@ -163,8 +163,8 @@ void draw()
     fill(255, 50, 50);
     
     for (int i=0; i<4; i++) {
-      //text("("+stdX.get(i)+", "+stdY.get(i)+")", mouseX+m, mouseY+17*i-n);  // 좌표표시 같이 움직이기
-      text("("+stdX.get(i)+", "+stdY.get(i)+") "+stdN.get(i), 5, 17*(i+1)); // 좌표표시 고정하기
+      text("("+stdX.get(i)+", "+stdY.get(i)+")", mouseX+m, mouseY+17*i-n);  // 좌표표시 같이 움직이기
+      //text("("+stdX.get(i)+", "+stdY.get(i)+") "+stdN.get(i), 5, 17*(i+1)); // 좌표표시 고정하기
     }
   } 
   else {
@@ -176,8 +176,8 @@ void draw()
     fill(255, 50, 50);
     
     for (int i=0; i<4; i++) {
-      //text("("+stdX.get(i)+", "+stdY.get(i)+")", mouseX+m, mouseY+17*i-n);  // 좌표표시 같이 움직이기
-      text("("+stdX.get(i)+", "+stdY.get(i)+") "+stdN.get(i), 5, 17*(i+1)); // 좌표표시 고정하기
+      text("("+stdX.get(i)+", "+stdY.get(i)+")", mouseX+m, mouseY+17*i-n);  // 좌표표시 같이 움직이기
+      //text("("+stdX.get(i)+", "+stdY.get(i)+") "+stdN.get(i), 5, 17*(i+1)); // 좌표표시 고정하기
     }
   }
 }
